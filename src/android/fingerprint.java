@@ -1,11 +1,19 @@
 package cordova.plugin.fingerprint;
 
+  
+
+
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.CordovaInterface;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+
+
 import android.Manifest;
 import android.app.KeyguardManager;
 import android.content.Context;
@@ -121,7 +129,7 @@ public class fingerprint extends CordovaPlugin {
             keyStore = KeyStore.getInstance("AndroidKeyStore");
         } catch (Exception e) {
             e.printStackTrace();
-            callback.error("Error:"  + e);
+        
         }
         try {
             KeyPairGenerator generator = KeyPairGenerator.getInstance(KeyProperties.KEY_ALGORITHM_EC, "AndroidKeyStore");
@@ -136,7 +144,7 @@ public class fingerprint extends CordovaPlugin {
             Log.d("Publickey",publicKey.getEncoded().toString());
         } catch (NoSuchAlgorithmException | NoSuchProviderException | InvalidAlgorithmParameterException e) {
             Log.d("Error", "Key generation failed!", e);
-            callback.error("Error:"  + e);
+            
         }
     }
     class SendDeviceDetails extends AsyncTask<String, Void, String> {
@@ -174,7 +182,7 @@ public class fingerprint extends CordovaPlugin {
             catch (Exception e)
             {
                 Log.d("error", "user data send failed!", e);
-                callback.error("Error:"  + e);
+                
             }
             return data;
         }
