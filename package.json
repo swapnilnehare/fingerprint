@@ -1,0 +1,17 @@
+{
+  "name": "fingerprint",
+  "version": "1.0.0",
+  "description": "fingerprint",
+  "cordova": {
+    "id": "cordova-plugin-fingerprint",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Swapnil Nehare",
+  "license": "ISC"
+}
